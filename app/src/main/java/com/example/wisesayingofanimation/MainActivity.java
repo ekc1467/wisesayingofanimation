@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity  {
                                     long arg3) {
                 Toast.makeText(getApplicationContext(), mid[arg2],
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+
             }
         });
     }
