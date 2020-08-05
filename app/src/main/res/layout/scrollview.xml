@@ -1,38 +1,39 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/aaa"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/but1"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="버튼 1" />
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <Button
             android:id="@+id/but2"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="버튼 2" />
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <Button
             android:id="@+id/but3"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="버튼 3" />
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <Button
             android:id="@+id/but4"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="버튼 4" />
+            android:layout_height="wrap_content"
+            android:text="" />
 
 
     </LinearLayout>

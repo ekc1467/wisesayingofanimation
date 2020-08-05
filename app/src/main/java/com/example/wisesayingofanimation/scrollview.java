@@ -18,8 +18,13 @@ public class scrollview extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scrollview);
+        Intent intent = getIntent();
 
+        String name = intent.getExtras().getString("name");
         Button btn1;
+        btn1 = (Button) findViewById(R.id.but1);
+        btn1.setText(name);
+        /*Button btn1;
         final ScrollView scroll;
 
         btn1 = (Button) findViewById(R.id.but1);
@@ -33,7 +38,7 @@ public class scrollview extends AppCompatActivity {
                 intent.putExtra("1",a1);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 }
