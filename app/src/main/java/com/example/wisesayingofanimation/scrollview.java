@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -20,25 +21,23 @@ public class scrollview extends AppCompatActivity {
         setContentView(R.layout.scrollview);
         Intent intent = getIntent();
 
-        String name = intent.getExtras().getString("name");
+        final String name = intent.getExtras().getString("name");
+        LinearLayout lin = findViewById(R.id.myLayout);
         Button btn1;
         btn1 = (Button) findViewById(R.id.but1);
         btn1.setText(name);
-        /*Button btn1;
-        final ScrollView scroll;
-
-        btn1 = (Button) findViewById(R.id.but1);
-        scroll = (ScrollView) findViewById(R.id.aaa);
-
+        LinearLayout app_layer = (LinearLayout) findViewById (R.id.myLayout);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                int a1 = 1;
-                intent.putExtra("1",a1);
-                startActivity(intent);
+                Intent intent = new Intent (getApplicationContext(), saying.class);
+                intent.putExtra("name",name);
+                startActivity(intent); //다음화면으로 넘어감
+                finish();
             }
-        });*/
+        });
 
     }
-}
+
+    }
+
