@@ -18,24 +18,23 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         setTitle("리스트뷰 테스트");
 
-        final String[] mid = { "ex2", "24시", "로스트", "로스트룸", "스몰빌", "탐정몽크",
-                "빅뱅이론", "프렌즈", "덱스터", "글리", "가쉽걸", "테이큰", "슈퍼내추럴", "브이" };
+        final String[] mid = { "원피스", "나루토", "블리치"};
 
         ListView list = findViewById(R.id.listView1);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, mid);
-        list.setAdapter(adapter);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_list_item_1, mid);
+                list.setAdapter(adapter);
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-                                    long arg3) {
-                Toast.makeText(getApplicationContext(), mid[arg2],
-                        Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent (getApplicationContext(), scrollview.class);
-                intent.putExtra("name",mid[arg2]);
-                startActivity(intent); //다음화면으로 넘어감
-                finish();
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                            long arg3) {
+                        Toast.makeText(getApplicationContext(), mid[arg2],
+                                Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent (getApplicationContext(), scrollview.class);
+                        intent.putExtra("name",mid[arg2]);
+                        startActivity(intent); //다음화면으로 넘어감
+                        finish();
 
             }
         });
