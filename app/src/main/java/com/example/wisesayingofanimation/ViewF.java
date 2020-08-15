@@ -1,7 +1,14 @@
 package com.example.wisesayingofanimation;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,9 +16,9 @@ public class ViewF extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.viewf2);
+        setContentView(R.layout.viewf);
 
-/*
+
         Button btnPrev, btnNext;
         final ViewFlipper vFlipper;
 
@@ -21,15 +28,24 @@ public class ViewF extends AppCompatActivity {
         vFlipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
         Intent intent = getIntent();
         String name = intent.getExtras().getString("name");
-
+        ImageView imageView = null;
+        TextView textView =null;
         for(int i=0;i<3;i++) {
-            ImageView imageView;
             String out = ""+name+i;
+            if (i == 0)
+            {imageView = (ImageView) findViewById(R.id.images0);
+            textView = findViewById(R.id.textView0);
+            }
             if(i==1)
-            {imageView = (ImageView) findViewById(R.id.images1);}
+            {imageView = (ImageView) findViewById(R.id.images1);
+            textView = findViewById(R.id.textView1);
+            }
             if(i==2)
-            {imageView = (ImageView) findViewById(R.id.images2);}
-            imageView = (ImageView) findViewById(R.id.images0);
+            {imageView = (ImageView) findViewById(R.id.images2);
+            textView = findViewById(R.id.textView2);
+            }
+
+
             try {
                 Uri uri = Uri.parse("android.resource://com.example.wisesayingofanimation/drawable/" + out);
                 imageView.setImageURI(uri);
@@ -51,6 +67,6 @@ public class ViewF extends AppCompatActivity {
             public void onClick(View v) {
                 vFlipper.showNext();
             }
-        });*/
+        });
     }
 }
