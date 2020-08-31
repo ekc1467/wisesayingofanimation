@@ -27,17 +27,19 @@ public class scrollview extends AppCompatActivity {
 
         String[] mid = new String[3];
 
-        if(name.equals("원피스")){ mid=  new String[]{"luffy", "Straw Hat Pirates", "ONE PIECE Others"};}
+        if(name.equals("원피스")){ mid=  new String[]{"Luffy", "Straw Hat Pirates", "ONE PIECE Others"};}
         if(name.equals("나루토")){ mid = new String[]{"Naruto", "Itachi", "Jiraiya"}; }
         if(name.equals("블리치")){ mid = new String[]{"Ichigo", "BLEACH Others", "KUBO TITE"};}
-        if(name.equals("귀멸의 칼날")){ mid = new String[]{"kamado tanjiro", "","Demon Slayer: Kimetsu no Yaiba Others I","Demon Slayer: Kimetsu no Yaiba Others II"};}
-        if(name.equals("도박 묵시록 카이지")){ mid = new String[]{"Kaiji","Tonegawa","Kaiji Others"};}
+        if(name.equals("귀멸의 칼날")){ mid = new String[]{"kamado tanjiro","Demon Slayer","Demon Slayeri"};}
+        if(name.equals("도박묵시록 카이지")){ mid = new String[]{"Kaiji","Tonegawa","Kaiji Others"};}
         if(name.equals("도박마")){ mid = new String[]{"Baku Madarame","Takaomi Kaji","Kiruma Souichi"};}
-        if(name.equals("하이큐")){ mid = new String[]{"Hinata","Kageyama","Haikyuu!!Others"};}
+        if(name.equals("하이큐")){ mid = new String[]{"Hinata","Kageyama","Haikyuu Others"};}
         if(name.equals("강철의 연금술사")){ mid = new String[]{"Edward","Alphonse","Van Hohenheim"};}
-        //if(name.equals("진격의 거인")){ mid = new String[]{"에렌","리바이","엘빈"};}
-        //if(name.equals("도쿄 구울")){ mid = new String[]{};}
-        //if(name.equals("데스노트")){ mid = new String[]{"라이토","L","류크"};}
+        if(name.equals("진격의 거인")){ mid = new String[]{"Eren Yaeger","Levi","Erwin Smith"};}
+        if(name.equals("도쿄 구울")){ mid = new String[]{"Ken Kaneki","Nagachika Hideyoshi","Fueguchi Hinami"};}
+        if(name.equals("데스노트")){ mid = new String[]{"Light Yagami","L","DEATH NOTE another"};}
+        if(name.equals("원펀맨")){ mid = new String[]{"Saitama","ONE PUNCH MAN another"};}
+        if(name.equals("나의 히어로 아카데미")){ mid = new String[]{"My Hero Academia"};}
         ListView list = findViewById(R.id.listView2);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,

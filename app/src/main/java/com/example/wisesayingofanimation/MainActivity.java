@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         setTitle("리스트뷰 테스트");
 
-        final String[] mid = { "원피스", "나루토", "블리치", "귀멸의 칼날", "도박묵시록 카이지", "도박마", "하이큐", "강철의 연금술사","진격의 거인","도쿄 구울","데스노트"};
+        final String[] mid = { "원피스", "나루토", "블리치", "귀멸의 칼날", "도박묵시록 카이지", "도박마", "하이큐", "강철의 연금술사","진격의 거인","도쿄 구울","데스노트","원펀맨","나의 히어로 아카데미"};
 
         ListView list = findViewById(R.id.listView1);
 

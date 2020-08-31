@@ -12,11 +12,28 @@ import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ViewF extends AppCompatActivity {
+import java.io.InputStream;
 
+public class ViewF extends AppCompatActivity {
+    String declaration= "manhwa";
+
+    public String getName() {
+        return declaration;
+    }
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewf);
+        String wise = null;
+
+        try{
+        InputStream inputS = getResources().openRawResource(getResources().getIdentifier(getName(), "raw", getPackageName()));
+        byte[] txt = new byte[inputS.available()];
+        inputS.read(txt);
+        wise = new String(txt);
+        inputS.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 
 
         Button btnPrev, btnNext;
@@ -28,8 +45,12 @@ public class ViewF extends AppCompatActivity {
         vFlipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
         Intent intent = getIntent();
         String name = intent.getExtras().getString("name");
-        ImageView imageView = null;
         TextView textView =null;
+        ImageView imageView = null;
+        //indexof가 들어갈 경우 오류가 나오는 거 같다. 양이 많아서문자 양이 많아서 오류가 난 것이 아닐까
+        //그런데 왜 끝 try 구문에 넣으면 이렇게 오류가 나는 걸까? 였는데 결국 인자값으로 넘어온 캐릭터의 이름 철자가 대문자여서였다. 꼭 이것을 확인해보길
+
+
         for(int i=0;i<3;i++) {
             String out = ""+name+i;
             if (i == 0)
@@ -47,8 +68,15 @@ public class ViewF extends AppCompatActivity {
 
 
             try {
-                Uri uri = Uri.parse("android.resource://com.example.wisesayingofanimation/drawable/" + out);
+                String e = out.toLowerCase();
+                String str = e.replaceAll(" ", "");
+                Uri uri = Uri.parse("android.resource://com.example.wisesayingofanimation/drawable/"+str);
                 imageView.setImageURI(uri);
+                int a = wise.indexOf(e);
+                int b = wise.indexOf("/",a);
+                int length = e.length();
+                String c = wise.substring(a+length, b);
+                textView.setText(c);
             } catch (Exception e) {
                 e.printStackTrace();
             }
