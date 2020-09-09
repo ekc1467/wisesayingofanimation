@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +23,10 @@ public class ViewF extends AppCompatActivity {
     }
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        String name = intent.getExtras().getString("name");
+        setTitle(name);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.viewf);
         String wise = null;
 
@@ -35,7 +40,6 @@ public class ViewF extends AppCompatActivity {
         e.printStackTrace();
     }
 
-
         Button btnPrev, btnNext;
         final ViewFlipper vFlipper;
 
@@ -43,12 +47,9 @@ public class ViewF extends AppCompatActivity {
         btnNext = (Button) findViewById(R.id.btnNext);
 
         vFlipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
-        Intent intent = getIntent();
-        String name = intent.getExtras().getString("name");
+
         TextView textView =null;
         ImageView imageView = null;
-        //indexof가 들어갈 경우 오류가 나오는 거 같다. 양이 많아서문자 양이 많아서 오류가 난 것이 아닐까
-        //그런데 왜 끝 try 구문에 넣으면 이렇게 오류가 나는 걸까? 였는데 결국 인자값으로 넘어온 캐릭터의 이름 철자가 대문자여서였다. 꼭 이것을 확인해보길
 
 
         for(int i=0;i<3;i++) {
@@ -96,5 +97,8 @@ public class ViewF extends AppCompatActivity {
                 vFlipper.showNext();
             }
         });
+    }
+    public void onBackPressed() {
+        super.onBackPressed();{finish();}
     }
 }

@@ -96,10 +96,10 @@ kamado tanjiro0 힘내라 탄지로! 힘내라!
 나는 지금까지 잘해왔어!
 나는 할 수있는 놈이다!/
 
-kamado tanjiro1 내가 꺾이지는 일은 절대로 없다!/
+kamado tanjiro1 내가 꺾여지는 일은 절대로 없다!/
 
-kamado tanjiro2 생사여탈의 권한을
-남에게 쥐어 주지마!/
+kamado tanjiro2 나와 네즈코의 인연은
+그 누구도 갈라놓을 수 없어!!/
 
 demon slayer0 가슴을 펴고 살아가거라!/
 
@@ -112,7 +112,9 @@ demon slayer2 늙는 것도 죽는 것도
 demon slayeri0 힘내! 사람은 마음이 원동력 이니까
 마음은 어디까지고 강해질 수 있어!/
 
-demon slayeri1 마음을 불태워라 !!!/
+demon slayeri1 불태워.
+불태워, 불태워!!
+마음을 불태워라!!!/
 
 demon slayeri2 분했단말야 져서 분했어
 나때문에 지는 거라고

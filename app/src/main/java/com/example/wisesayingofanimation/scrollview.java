@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -20,9 +21,10 @@ public class scrollview extends AppCompatActivity {
     @SuppressLint("WrongViewCast")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.scrollview);
         Intent intent = getIntent();
-
+        setTitle("캐릭터 목록");
         final String name = intent.getExtras().getString("name");
 
         String[] mid = new String[3];
@@ -38,7 +40,7 @@ public class scrollview extends AppCompatActivity {
         if(name.equals("진격의 거인")){ mid = new String[]{"Eren Yaeger","Levi","Erwin Smith"};}
         if(name.equals("도쿄 구울")){ mid = new String[]{"Ken Kaneki","Nagachika Hideyoshi","Fueguchi Hinami"};}
         if(name.equals("데스노트")){ mid = new String[]{"Light Yagami","L","DEATH NOTE another"};}
-        if(name.equals("원펀맨")){ mid = new String[]{"Saitama","ONE PUNCH MAN another"};}
+        if(name.equals("원펀맨")){ mid = new String[]{"Saitama","ONE PUNCH MAN another","ONE PUNCH MAN anotheri"};}
         if(name.equals("나의 히어로 아카데미")){ mid = new String[]{"My Hero Academia"};}
         ListView list = findViewById(R.id.listView2);
 
@@ -55,9 +57,11 @@ public class scrollview extends AppCompatActivity {
                 Intent intent = new Intent (getApplicationContext(), ViewF.class);
                 intent.putExtra("name", finalMid[arg2]);
                 startActivity(intent); //다음화면으로 넘어감
-                finish();
 
             }
         });
+    }
+    public void onBackPressed() {
+        super.onBackPressed();{finish();}
     }
 }

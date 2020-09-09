@@ -1,25 +1,36 @@
 package com.example.wisesayingofanimation;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import com.example.wisesayingofanimation.R;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class IntroActivity extends Activity {
+public class IntroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.introactivity); //xml , java 소스 연결
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable(){
-            @Override
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        LinearLayout layout = new LinearLayout(this);
+        layout.setBackgroundResource(R.drawable.intro1);
+        setContentView(layout);
+
+        new Thread(){
             public void run() {
-                Intent intent = new Intent (getApplicationContext(), MainActivity.class);
-                startActivity(intent); //다음화면으로 넘어감
-                finish();
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+                finish(); //현재 화면(Activity) 종료
             }
-        },3000); //3초 뒤에 Runner객체 실행하도록 함
+        }.start();
     }
 
     @Override
