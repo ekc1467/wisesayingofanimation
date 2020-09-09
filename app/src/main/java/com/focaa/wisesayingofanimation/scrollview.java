@@ -1,4 +1,4 @@
-package com.example.wisesayingofanimation;
+package com.focaa.wisesayingofanimation;
 
 
 import android.annotation.SuppressLint;
